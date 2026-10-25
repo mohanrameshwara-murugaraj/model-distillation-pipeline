@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "distill-economics"
+version = "0.1.0"
+description = "Reproducible teacher-to-student intent distillation with unit-economics and fallback routing"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = {text = "MIT"}
+authors = [{name = "Project contributor"}]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "pydantic>=2.8,<3",
+  "anthropic>=0.70,<2",
+  "openai>=1.50,<3",
+  "datasets>=3,<5",
+  "python-dotenv>=1,<2",
+]
+
+[project.optional-dependencies]
+train = [
+  "transformers>=4.52,<6",
+  "torch>=2.5,<3",
+  "trl>=0.18,<1",
+  "peft>=0.15,<1",
+  "accelerate>=1,<2",
+  "bitsandbytes>=0.45,<1",
+  "wandb>=0.19,<1",
+]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "ruff>=0.8,<1"]
+
+[project.scripts]
+distill = "distill_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["F"]

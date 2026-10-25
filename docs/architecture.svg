@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-label="Model distillation pipeline architecture diagram">
+<defs><style>
+  .title{font:700 27px Arial,sans-serif;fill:#132238}.sub{font:14px Arial,sans-serif;fill:#52657b}
+  .box{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.txt{font:700 18px Arial,sans-serif;fill:#132238}
+  .body{font:14px Arial,sans-serif;fill:#52657b}.arrow{fill:none;stroke:#64748b;stroke-width:3;marker-end:url(#tip)}
+  .orange{fill:#fff7ed;stroke:#f59e0b;stroke-width:2}.teal{fill:#f0fdfa;stroke:#0d9488;stroke-width:2}
+</style><marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="610" fill="#fff"/><text x="55" y="53" class="title">Model Distillation Pipeline</text><text x="55" y="80" class="sub">Banking intent classification · teacher-supervised fine-tuning · measured serving economics</text>
+<text x="56" y="130" class="txt">01 — TRAINING</text>
+<rect x="55" y="155" width="202" height="116" rx="12" class="box"/><text x="77" y="192" class="txt">BANKING77</text><text x="77" y="221" class="body">Real customer queries</text><text x="77" y="245" class="body">Frozen test set</text>
+<path d="M257 211 H302" class="arrow"/>
+<rect x="304" y="155" width="206" height="116" rx="12" class="orange"/><text x="326" y="192" class="txt">Claude teacher</text><text x="326" y="221" class="body">Schema + gold quality</text><text x="326" y="245" class="body">Spend and usage logs</text>
+<path d="M510 211 H554" class="arrow"/>
+<rect x="556" y="155" width="206" height="116" rx="12" class="box"/><text x="578" y="192" class="txt">Quality gate</text><text x="578" y="221" class="body">Drop bad labels</text><text x="578" y="245" class="body">Deduplicate input</text>
+<path d="M762 211 H804" class="arrow"/>
+<rect x="806" y="155" width="335" height="116" rx="12" class="teal"/><text x="828" y="192" class="txt">Qwen3-8B student</text><text x="828" y="221" class="body">QLoRA rank 8 / rank 32</text><text x="828" y="245" class="body">W&amp;B checkpoints + validation</text>
+<text x="56" y="343" class="txt">02 — SERVING &amp; ESCALATION</text>
+<rect x="55" y="367" width="210" height="100" rx="12" class="box"/><text x="77" y="405" class="txt">API request</text><text x="77" y="432" class="body">Customer query</text>
+<path d="M265 417 H333" class="arrow"/>
+<rect x="335" y="367" width="210" height="100" rx="12" class="teal"/><text x="357" y="405" class="txt">FastAPI router</text><text x="357" y="432" class="body">Validation + confidence</text>
+<path d="M545 417 H625" class="arrow"/>
+<rect x="627" y="367" width="204" height="100" rx="12" class="teal"/><text x="649" y="405" class="txt">vLLM student</text><text x="649" y="432" class="body">LoRA adapter inference</text>
+<path d="M831 417 H903" class="arrow"/>
+<rect x="905" y="367" width="235" height="100" rx="12" class="box"/><text x="927" y="405" class="txt">Classified intent</text><text x="927" y="432" class="body">Safe telemetry</text>
+<path d="M440 467 V521 H924 V468" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#tip)"/>
+<rect x="580" y="502" width="195" height="37" rx="9" class="orange"/><text x="598" y="526" class="body">Claude on escalation</text>
+<text x="55" y="578" class="sub">03 — EVALUATION: untouched test · accuracy/F1 · p50/p95 · escalations · all-in daily GPU cost · break-even requests/day</text>
+</svg>
