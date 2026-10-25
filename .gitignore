@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+wandb/
+outputs/
+data/processed/
+data/teacher/
+artifacts/
+*.safetensors
+*.pt
+*.bin
+.idea/
+.DS_Store
