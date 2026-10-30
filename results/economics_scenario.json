@@ -1,0 +1,29 @@
+{
+  "scenario_type": "hypothetical",
+  "not_actual_spending": true,
+  "not_measured_teacher_usage": true,
+  "results": {
+    "assumptions": {
+      "teacher_usd_per_request": 0.003,
+      "gpu_usd_per_hour": 0.5,
+      "escalation_rate": 0.25,
+      "student_variable_usd_per_request": 0.0,
+      "operations_usd_per_day": 1.0,
+      "amortized_setup_usd_per_day": 0.0,
+      "acceptable_rps": null
+    },
+    "fixed_daily_usd_including_idle": 13.0,
+    "student_marginal_usd_including_escalations": 0.00075,
+    "break_even_requests_per_day": 5778,
+    "measured_slo_capacity_requests_per_day": null,
+    "break_even_within_measured_capacity": null,
+    "at_requested_volume": {
+      "requests_per_day": 10000,
+      "teacher_daily_usd": 30.0,
+      "student_router_daily_usd": 20.5,
+      "net_savings_daily_usd": 9.5,
+      "teacher_usd_per_1000": 3.0,
+      "student_router_usd_per_1000": 2.05
+    }
+  }
+}

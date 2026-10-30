@@ -75,7 +75,7 @@ def prepare(out: str = "data/processed", seed: int = 42, valid_fraction: float =
 
     if not 0.05 <= valid_fraction <= 0.3:
         raise ValueError("valid_fraction must be in [0.05, 0.30]")
-    ds = load_dataset("PolyAI/banking77")
+    ds = load_dataset("PolyAI/banking77", revision="refs/pr/7")
     labels = ds["train"].features["label"].names
     # The official test split never participates in selection, training or de-duplication.
     split = ds["train"].train_test_split(

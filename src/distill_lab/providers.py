@@ -42,7 +42,6 @@ class ClaudeTeacher:
         result = self.client.messages.create(
             model=self.model,
             max_tokens=128,
-            temperature=0,
             system=teacher_system(self.labels),
             messages=[{"role": "user", "content": text}],
             output_config={"format": {"type": "json_schema", "schema": schema}},
@@ -81,7 +80,6 @@ class VLLMStudent:
             model=self.model,
             messages=[{"role": "system", "content": STUDENT_SYSTEM},
                       {"role": "user", "content": text}],
-            temperature=0,
             max_tokens=80,
             logprobs=True,
             extra_body={

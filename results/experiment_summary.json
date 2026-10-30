@@ -1,0 +1,23 @@
+{
+  "experiment": "BANKING77 lightweight supervised QLoRA baseline",
+  "status": "completed",
+  "training_type": "gold-label supervised fine-tuning",
+  "base_model": "Qwen/Qwen3-1.7B",
+  "dataset": "PolyAI/banking77",
+  "training_environment": "Kaggle Tesla T4",
+  "training_examples": 1925,
+  "validation_examples_evaluated": 382,
+  "epochs": 1,
+  "lora_rank": 4,
+  "quantization": "4-bit NF4",
+  "optimizer_steps": 241,
+  "training_runtime_seconds": 1187,
+  "final_training_loss": 0.747805991546247,
+  "best_validation_loss": 0.2161422073841095,
+  "best_checkpoint_step": 200,
+  "validation_accuracy": 0.5078534031413613,
+  "validation_macro_f1": 0.5371931819983767,
+  "invalid_predictions": 100,
+  "teacher_distillation_completed": false,
+  "teacher_api_evaluation_completed": false
+}

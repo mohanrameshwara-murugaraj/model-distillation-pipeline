@@ -14,3 +14,19 @@ artifacts/
 *.bin
 .idea/
 .DS_Store
+models/
+
+# Generated datasets
+data/raw/
+data/processed/
+
+# Python package metadata
+*.egg-info/
+
+# Training artifacts
+checkpoints/
+outputs/
+
+# Generated experiment data
+data/gold-baseline/
+data/teacher/
