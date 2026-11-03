@@ -1,3 +1,5 @@
+📄 [Project Summary — What I Built](PROJECT_SUMMARY.md)
+
 # Model Distillation Pipeline — Banking Intent Classification
 
 **An engineering prototype for teacher–student intent classification, with a trained Qwen3 student baseline, schema-validated teacher integration, failure-aware routing, and scenario-based unit economics.**
