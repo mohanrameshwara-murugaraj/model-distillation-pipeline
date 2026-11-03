@@ -2,7 +2,7 @@
 
 Built a banking intent classification prototype using Qwen3-1.7B and QLoRA fine-tuning on BANKING77. Implemented dataset preparation, model evaluation, taxonomy-aware inference routing with simulated teacher fallback, and scenario-based deployment cost analysis. Trained the student model using a free Kaggle GPU.
 
-[Project Summary — What I Built](PROJECT_SUMMARY.md)
+📄 [Project Summary — What I Built](PROJECT_SUMMARY.md)
 ---
 
 # Model Distillation Pipeline — Banking Intent Classification
