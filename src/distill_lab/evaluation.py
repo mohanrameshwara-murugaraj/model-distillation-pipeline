@@ -1,7 +1,7 @@
 """Concurrently benchmark real providers; explicit pay and final-test guards."""
 from pathlib import Path
 import concurrent.futures
-
+from time import perf_counter
 from .economics import teacher_api_cost
 from .io import read_jsonl, write_jsonl
 from .metrics import score_predictions
